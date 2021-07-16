@@ -30,6 +30,15 @@ on:
 name: Deploy to Amazon ECS
 
 jobs:
+  build:
+    name: Aas
+    runs-on: ubuntu-latest
+    
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -79,3 +88,8 @@ jobs:
         service: sample-app-service
         cluster: default
         wait-for-service-stability: true
+        
+    
+        
+      
+
